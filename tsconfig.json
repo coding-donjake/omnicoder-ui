@@ -24,6 +24,6 @@
     /* React types */
     "types": ["react", "react-dom"]
   },
-  "include": ["src", "demo"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
 }
