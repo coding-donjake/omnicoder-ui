@@ -1,0 +1,22 @@
+/* src/components/omnicoder-ui-style.css */
+.omnicoder-ui-theme-light {
+  @apply bg-gray-100;
+  @apply text-gray-900;
+}
+.omnicoder-ui-theme-dark {
+  @apply bg-gray-900;
+  @apply text-white;
+}
+
+/* src/components/screen/style.css */
+.omnicoder-ui-screen {
+  @apply flex flex-row gap-4;
+  @apply w-screen h-screen max-h-screen p-4;
+}
+.omnicoder-ui-screen-content {
+  @apply flex flex-col gap-4 flex-1;
+  @apply max-h-full;
+}
+.omnicoder-ui-screen-content-wrapper {
+  @apply flex flex-col gap-2 flex-1;
+}
