@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
-    /* Output settings */
     "outDir": "dist",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-
-    /* Module settings */
     "target": "ES2019",
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -14,16 +11,12 @@
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
-
-    /* Strict type checking */
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "skipLibCheck": true,
-
-    /* React types */
     "types": ["react", "react-dom"]
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
+  "exclude": ["node_modules", "dist"]
 }
