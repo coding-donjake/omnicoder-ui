@@ -23,27 +23,48 @@ __export(Button_exports, {
   default: () => Button_default
 });
 module.exports = __toCommonJS(Button_exports);
+var import_free_solid_svg_icons = require("@fortawesome/free-solid-svg-icons");
+var import_react_fontawesome = require("@fortawesome/react-fontawesome");
 var import_jsx_runtime = require("react/jsx-runtime");
+var defaultButtonConfig = {
+  variant: "primary",
+  color: "primary",
+  edgeIcon: false,
+  iconPosition: "left",
+  alignContent: "left"
+};
 var Button = ({
   cls = "",
-  variant = "primary",
-  color = "primary",
   type = "button",
-  icon = null,
-  children,
+  icon,
+  loading,
+  loadingIcon,
   disabled,
-  onClick = () => null
+  children,
+  onClick,
+  config
 }) => {
-  const classNames = [
-    "omnicoder-ui-button",
-    "omnicoder-ui-button-base",
-    `omnicoder-ui-button-base-variant-${variant}`,
-    `omnicoder-ui-button-base-color-${color} ${cls}`,
-    cls
-  ];
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { className: classNames.join(" "), type, disabled, onClick, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "omnicoder-ui-button-base-icon", children: icon }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "omnicoder-ui-button-base-content", children })
-  ] });
+  const finalConfig = { ...defaultButtonConfig, ...config };
+  let flexDirection = void 0;
+  if (finalConfig.iconPosition == "left") flexDirection = "flex-row";
+  else if (finalConfig.iconPosition == "right") flexDirection = "flex-row-reverse";
+  let alignContent = void 0;
+  if (finalConfig.alignContent == "left") alignContent = flexDirection == "flex-row" ? "justify-start" : "justify-end";
+  else if (finalConfig.alignContent == "center") alignContent = "justify-center";
+  else if (finalConfig.alignContent == "right")
+    alignContent = flexDirection == "flex-row" ? "justify-end" : "justify-start";
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+    "button",
+    {
+      className: `omnicoder-ui-button omnicoder-ui-button-base omnicoder-ui-button-base-variant-${finalConfig.variant} omnicoder-ui-button-base-color-${finalConfig.color} ${alignContent} ${flexDirection} ${cls}`,
+      type,
+      disabled,
+      onClick,
+      children: [
+        icon ? loading ? loadingIcon ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "omnicoder-ui-button-base-icon omnicoder-ui-icon-spinner", children: loadingIcon }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "omnicoder-ui-button-base-icon omnicoder-ui-icon-spinner", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react_fontawesome.FontAwesomeIcon, { icon: import_free_solid_svg_icons.faSpinner }) }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "omnicoder-ui-button-base-icon", children: icon }) : null,
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `flex ${alignContent} ${flexDirection} ${finalConfig.edgeIcon ? "flex-1" : ""}`, children })
+      ]
+    }
+  );
 };
 var Button_default = Button;

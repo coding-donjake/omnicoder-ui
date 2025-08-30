@@ -24,20 +24,12 @@ __export(Card_exports, {
 });
 module.exports = __toCommonJS(Card_exports);
 var import_jsx_runtime = require("react/jsx-runtime");
-var Card = ({
-  cls = "",
-  variant = "primary",
-  headless = false,
-  title,
-  footless = false,
-  footer,
-  children
-}) => {
+var Card = ({ cls = "", variant = "primary", header, footer, children }) => {
   const classNames = ["omnicoder-ui-card", "omnicoder-ui-card-base", `omnicoder-ui-card-base-variant-${variant}`, cls];
   return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: classNames.join(" "), children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `omnicoder-ui-card-base-variant-${variant}-header`, children: !headless ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `omnicoder-ui-card-base-variant-${variant}-header-title`, children: title }) : null }),
+    !header.headless ? header.component ? header.component : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `omnicoder-ui-card-base-variant-${variant}-header`, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `omnicoder-ui-card-base-variant-${variant}-header-title`, children: header.title }) }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {}),
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `omnicoder-ui-card-base-variant-${variant}-content`, children }),
-    !footless ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `omnicoder-ui-card-base-variant-${variant}-footer`, children: footer }) : null
+    footer ? footer : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {})
   ] });
 };
 var Card_default = Card;

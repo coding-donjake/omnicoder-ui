@@ -7,6 +7,17 @@
   @apply bg-gray-900;
   @apply text-white;
 }
+.omnicoder-ui-icon-spinner {
+  @apply animate-spin;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* src/components/screen/style.css */
 .omnicoder-ui-screen {
