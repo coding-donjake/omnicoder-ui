@@ -1,6 +1,6 @@
 {
   "name": "omnicoder-ui",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "React UI Components By donjake",
   "type": "module",
   "exports": {
@@ -11,6 +11,10 @@
     "./card": {
       "import": "./dist/card/Card.js",
       "require": "./dist/card/Card.cjs"
+    },
+    "./input": {
+      "import": "./dist/input/Input.js",
+      "require": "./dist/input/Input.cjs"
     },
     "./screen": {
       "import": "./dist/screen/Screen.js",
