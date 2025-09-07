@@ -1,7 +1,7 @@
 interface CardProps {
     cls?: string;
     variant?: "primary";
-    header: CardHeader;
+    header?: CardHeader;
     footer?: React.ReactNode;
     children?: React.ReactNode;
 }

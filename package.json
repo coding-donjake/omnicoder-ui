@@ -1,6 +1,6 @@
 {
   "name": "omnicoder-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React UI Components By donjake",
   "type": "module",
   "exports": {

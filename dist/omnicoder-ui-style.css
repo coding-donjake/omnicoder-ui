@@ -108,7 +108,7 @@
 }
 
 .omnicoder-ui-card-base-variant-primary-content {
-  @apply px-4;
+  @apply flex-1 px-4;
 }
 
 .omnicoder-ui-card-base-variant-primary-footer {
@@ -132,7 +132,7 @@
 }
 
 .omnicoder-ui-input-base input {
-  @apply w-full p-2 border rounded-lg;
+  @apply flex-1 w-full p-2 border rounded-lg;
   @apply text-sm;
 }
 
@@ -147,16 +147,16 @@
   @apply bg-gray-700 border-gray-600 focus:border-blue-500 focus:ring-blue-500;
   @apply text-white placeholder-gray-400;
 }
-.omnicoder-ui-screen {
+.omnicoder-ui-screen-base {
   @apply flex flex-row gap-4;
   @apply w-screen h-screen max-h-screen p-4;
 }
 
-.omnicoder-ui-screen-content {
+.omnicoder-ui-screen-base-content {
   @apply flex flex-col gap-4 flex-1;
   @apply max-h-full;
 }
 
-.omnicoder-ui-screen-content-wrapper {
+.omnicoder-ui-screen-base-content-wrapper {
   @apply flex flex-col gap-2 flex-1;
 }
